@@ -1,0 +1,234 @@
+/* General reset for margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-image: url('123.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: backgroundAnimation 8s ease infinite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Welcome Section */
+#welcome {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: slideInText 2s ease-in-out;
+    padding: 20px;
+}
+
+.welcome-message {
+    font-size: 1.5em; /* Reduced font size */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.btn-about {
+    background-color: #ff6f61;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-about:hover {
+    background-color: #e05b4b;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 180px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    text-align: left;
+    right: 0;
+    padding: 10px 0;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* About Section */
+#about {
+    margin-top: 200px;
+    padding: 50px 0;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    width: 90%;
+}
+
+.about-text {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+}
+
+.about-text h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.about-text p {
+    font-size: 1.2em;
+    color: #ddd;
+}
+
+.profile-image-portrait {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    border: 5px solid white;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.profile-image-portrait:hover {
+    transform: scale(1.1);
+}
+
+/* New Social Media Section with Circular Icons */
+#social-media {
+    margin-top: 50px;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    color: white;
+    background-color: #333;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+.social-icon.facebook { background-color: #3b5998; }
+.social-icon.whatsapp { background-color: #25D366; }
+.social-icon.instagram { background: radial-gradient(circle at 30% 30%, #fdf497, #fd5949, #d6249f, #285AEB); }
+
+/* Visitor Counter */
+#visitor-counter {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 18px;
+}
+
+#visitor-counter span {
+    font-weight: bold;
+}
+
+/* Keyframe animation for the welcome message */
+@keyframes slideInText {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 200% 0; }
+    50% { background-position: 0 100%; }
+    100% { background-position: 200% 0; }
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    .welcome-message {
+        font-size: 1.2em;
+    }
+    .about-text h2 {
+        font-size: 2em;
+    }
+    .about-text p {
+        font-size: 1em;
+    }
+    .profile-image-portrait {
+        max-width: 200px;
+    }
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-message {
+        font-size: 1em;
+    }
+    .about-text h2 {
+        font-size: 1.8em;
+    }
+    .about-text p {
+        font-size: 0.9em;
+    }
+    .profile-image-portrait {
+        max-width: 150px;
+    }
+    .social-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+    }
+}
+ 
